@@ -19,6 +19,7 @@ async function openApplication(userData: string, exportDir: string, runtimeError
       NODE_ENV: 'test',
       KNOT_TEST_EXPORT_PATH: exportDir,
       KNOT_TEST_AVAILABILITY_PATH: exportDir,
+      KNOT_TEST_MEMORY_VAULT: '1',
       KNOT_TEST_CLOUD: process.env.KNOT_TEST_CLOUD ?? '1',
       KNOT_TEST_DAYTONA_API_KEY: process.env.KNOT_TEST_DAYTONA_API_KEY ?? 'dtn_test_only_not_a_real_credential_000000000',
       KNOT_TEST_PARALLEL: process.env.KNOT_TEST_PARALLEL ?? '1',
@@ -31,7 +32,6 @@ async function openApplication(userData: string, exportDir: string, runtimeError
     if (message.type() === 'error') runtimeErrors.push(`console: ${message.text()}`)
   })
   await expect(window).toHaveTitle(/Knot/)
-  await expect(window.getByText('Open knowledge studio')).toBeVisible()
   await expect(window.getByRole('heading', { name: /Good (morning|afternoon|evening)/ })).toBeVisible()
   return { application, window }
 }

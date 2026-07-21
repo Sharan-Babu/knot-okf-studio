@@ -8,6 +8,12 @@ interface VaultFile {
   secrets: Record<string, string>
 }
 
+const testSecrets = new Map<string, string>()
+
+function useTestMemoryVault(): boolean {
+  return process.env.NODE_ENV === 'test' && process.env.KNOT_TEST_MEMORY_VAULT === '1'
+}
+
 function vaultPath(): string {
   return path.join(app.getPath('userData'), 'knot-secrets.json')
 }
@@ -36,6 +42,7 @@ export async function getSecret(id: string): Promise<string | null> {
   if (id === 'parallel-api-key' && process.env.KNOT_TEST_PARALLEL_API_KEY) {
     return process.env.KNOT_TEST_PARALLEL_API_KEY
   }
+  if (useTestMemoryVault()) return testSecrets.get(id) ?? null
   if (!vaultProtectionAvailable()) return null
   const encrypted = (await readVault()).secrets[id]
   if (!encrypted) return null
@@ -47,6 +54,10 @@ export async function getSecret(id: string): Promise<string | null> {
 }
 
 export async function setSecret(id: string, secret: string): Promise<void> {
+  if (useTestMemoryVault()) {
+    testSecrets.set(id, secret)
+    return
+  }
   if (!vaultProtectionAvailable()) {
     throw new Error('Secure operating-system credential storage is unavailable on this device.')
   }
@@ -56,6 +67,10 @@ export async function setSecret(id: string, secret: string): Promise<void> {
 }
 
 export async function removeSecret(id: string): Promise<void> {
+  if (useTestMemoryVault()) {
+    testSecrets.delete(id)
+    return
+  }
   const vault = await readVault()
   if (!(id in vault.secrets)) return
   delete vault.secrets[id]
