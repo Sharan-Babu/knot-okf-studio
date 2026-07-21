@@ -32,24 +32,24 @@ These steps require the submitter's identity, personal declarations, voice, or a
 
 ## Repository and build evidence
 
-- [ ] Initialize this directory as a Git repository. It is not currently a Git worktree.
-- [ ] Create an intentional first commit without rewriting or fabricating history.
-- [ ] Publish the repository to GitHub.
-- [ ] If public, verify that `LICENSE` and all required source are present.
+- [x] Initialize this directory as a Git repository.
+- [x] Create an intentional first commit without rewriting or fabricating history.
+- [x] Publish the repository to GitHub.
+- [x] Verify the public repository contains the MIT `LICENSE` and required source.
 - [ ] If private, grant repository access to `testing@devpost.com` and `build-week-event@openai.com`.
-- [ ] Add a Build Week section to `README.md` covering:
+- [x] Add a Build Week section to `README.md` covering:
   - the problem and target audience;
   - why OKF and local-first storage were selected;
   - where Codex accelerated implementation and research;
   - the specific GPT-5.6 contribution;
   - major product and security decisions;
   - judge setup, sample data, and a short test path.
-- [ ] Preserve genuine dated evidence that the project was built during the submission period, using the Codex task, filesystem timestamps, and the new Git history. Do not manufacture earlier commits.
+- [x] Preserve genuine dated evidence using the Codex task, filesystem timestamps, and new Git history without manufacturing earlier commits.
 - [x] Run one documented, meaningful GPT-5.6 implementation or release-audit pass before submission.
 - [ ] Verify the model actually used in that pass and describe only observed behavior. Do not infer the model from a generic Codex connection.
 - [x] Run `/feedback` in the primary Codex build task and retain the Session ID where most core functionality was built.
 - [x] Add the `/feedback` Session ID to the Devpost submission materials.
-- [ ] Check the repository for real credentials, exported bearer capabilities, local app data, and user-specific paths before publishing.
+- [x] Check the repository for real credentials, exported bearer capabilities, local app data, and user-specific paths before publishing.
 - [ ] Revoke or rotate temporary Daytona and Parallel test credentials after the final live tests. Never commit them.
 
 ## Final product verification
@@ -68,17 +68,17 @@ These steps require the submitter's identity, personal declarations, voice, or a
 
 - [ ] Create a GitHub Release or another durable download containing the evaluation build.
 - [ ] Include the macOS ZIP and checksum. Clearly label it as unsigned if signing and notarization are not completed.
-- [ ] Provide the source-run fallback:
+- [x] Provide the source-run fallback:
 
   ```bash
   npm install
   npm run dev
   ```
 
-- [ ] State the supported Node.js and npm versions.
-- [ ] Explain that the sample workspace opens automatically and that provider API keys are not needed for the core walkthrough.
-- [ ] Provide an optional judge path for live features without publishing any credential.
-- [ ] Verify every judge-facing URL from a signed-out browser session.
+- [x] State the supported Node.js and npm versions.
+- [x] Explain that the sample workspace opens automatically and that provider API keys are not needed for the core walkthrough.
+- [x] Provide an optional judge path for live features without publishing any credential.
+- [x] Verify the public GitHub and YouTube URLs from signed-out/public views.
 
 ## Demo video production
 
@@ -124,7 +124,7 @@ Hosting and provider setup should not consume the demonstration. Core features w
 - [x] Select **Work & Productivity** in the prepared submission answers.
 - [x] Add a concise project title and tagline.
 - [x] Draft the description around problem, solution, differentiation, implementation, impact, and Build Week work.
-- [ ] Add the GitHub repository URL.
+- [x] Add the GitHub repository URL.
 - [x] Add the `/feedback` Session ID to the prepared submission answers.
 - [x] Add the public YouTube URL.
 - [x] Prepare and upload a 16:9 Knot cover.
@@ -136,13 +136,13 @@ Hosting and provider setup should not consume the demonstration. Core features w
 
 ## Final submission audit
 
-- [ ] Project page is complete rather than saved only as a draft.
-- [ ] Category, submitter type, and country fields are populated.
-- [ ] Repository permissions work for judges.
+- [x] Project page is complete and submitted rather than saved only as a draft.
+- [x] Category, submitter type, and country fields are populated.
+- [x] Repository is publicly accessible to judges.
 - [ ] README setup succeeds on a clean machine.
 - [ ] Video is public, plays correctly, and remains under three minutes.
-- [ ] Video narration explicitly covers Knot, Codex, and GPT-5.6.
-- [ ] `/feedback` Session ID is present and valid.
-- [ ] Product claims match the tested build and documented limitations.
-- [ ] No secrets or live capability URLs appear in the repository, video, screenshots, logs, or submission copy.
-- [ ] Submit button has been used and Devpost shows a submitted confirmation before the deadline.
+- [x] Video narration explicitly covers Knot, Codex, and GPT-5.6.
+- [x] `/feedback` Session ID is present in the submitted entry.
+- [x] Product claims match the tested build and documented limitations.
+- [x] No secrets or live capability URLs appear in the public repository or submission copy.
+- [x] Devpost reports submission `1109198` as **Submitted** before the deadline.

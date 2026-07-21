@@ -14,6 +14,12 @@
 
 **Video:** https://youtu.be/t7z8PrAo_O8
 
+**Repository:** https://github.com/Sharan-Babu/knot-okf-studio
+
+**Devpost:** https://devpost.com/software/knot-vygbao
+
+**Submission ID:** `1109198`
+
 **Feedback Session ID:** `019f6e8c-24b6-75b3-a072-4fd82c209a12`
 
 ## Description

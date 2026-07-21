@@ -6,6 +6,14 @@
   "main": "./out/main/index.js",
   "author": "Knot Studio",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sharan-Babu/knot-okf-studio.git"
+  },
+  "homepage": "https://github.com/Sharan-Babu/knot-okf-studio#readme",
+  "bugs": {
+    "url": "https://github.com/Sharan-Babu/knot-okf-studio/issues"
+  },
   "type": "module",
   "scripts": {
     "dev": "electron-vite dev",
