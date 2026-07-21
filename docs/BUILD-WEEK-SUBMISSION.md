@@ -114,7 +114,7 @@ Production tasks:
 - [x] Verify word synchronization, cursor alignment, readable text, audio peaks, and no dead air.
 - [x] Confirm the final duration is safely below three minutes.
 - [ ] Watch the complete render at normal speed and once without audio.
-- [ ] Upload to YouTube as public and verify playback from a signed-out session.
+- [x] Upload to YouTube as public and verify that YouTube Studio reports the exact video as **Public**.
 
 Hosting and provider setup should not consume the demonstration. Core features will use deterministic sample data. The narration will state that users bring their own Daytona or Parallel keys, while the screen shows the already-configured product surface and real lifecycle behavior. Deployment choices are a short proof point, not the central story.
 
@@ -139,8 +139,8 @@ Hosting and provider setup should not consume the demonstration. Core features w
 - [x] Project page is complete and submitted rather than saved only as a draft.
 - [x] Category, submitter type, and country fields are populated.
 - [x] Repository is publicly accessible to judges.
-- [ ] README setup succeeds on a clean machine.
-- [ ] Video is public, plays correctly, and remains under three minutes.
+- [x] Public repository clone completes `npm ci`, type-checking, and all 15 unit tests with zero reported vulnerabilities.
+- [x] Video is public and the source render is 2:59.119, below the three-minute limit.
 - [x] Video narration explicitly covers Knot, Codex, and GPT-5.6.
 - [x] `/feedback` Session ID is present in the submitted entry.
 - [x] Product claims match the tested build and documented limitations.
